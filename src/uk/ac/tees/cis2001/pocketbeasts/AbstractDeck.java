@@ -17,7 +17,7 @@ public abstract class AbstractDeck implements DeckInterface {
     public AbstractDeck() {
         this.cards = new ArrayList<>();
     }
-    
+        
     @Override
     public ArrayList<Card> getCards(){
         return cards;

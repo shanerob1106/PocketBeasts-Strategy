@@ -63,13 +63,12 @@ public class Main {
         return getPrompt(prompt, validResponse);
     }
     
-    Attack attack = new Attack();
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         System.out.println("");
         System.out.println("-+-+-+-+-+-+-+-+-+-+-+-+");
         System.out.println("Welcome to PocketBeasts!");

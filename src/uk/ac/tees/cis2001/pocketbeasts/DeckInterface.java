@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author shane
  */
 public interface DeckInterface {
-    ArrayList<Card> getCards();
+     ArrayList<Card> getCards();
     Card getCard(int index);
     void add(Card card);
     void remove(Card card);

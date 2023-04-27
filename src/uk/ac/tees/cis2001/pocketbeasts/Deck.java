@@ -32,9 +32,10 @@ public class Deck extends AbstractDeck {
         this.cards = cards;
     }
     
-//    public int count() {
-//        return this.cards.size();
-//    }
+    @Override
+    public int count() {
+        return this.cards.size();
+    }
     
     public Card draw() {
         Card card = this.cards.get(0);
