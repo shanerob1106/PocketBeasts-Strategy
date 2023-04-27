@@ -29,14 +29,14 @@ public class Player {
     
     private int manaAvailable;
     private int manaTicker;
-    // private int health;
+    private int health;
     
     private final Deck deck;
     private final Hand hand;
     private final InPlay inPlay;
     private final Graveyard graveyard;
     
-    Attack attack = new Attack();
+    StandardAttack attack = new StandardAttack();
 
     public Player(String name, Deck deck) {
         this.name = name;
@@ -99,10 +99,10 @@ public class Player {
         this.hand.add(this.deck.draw());
     }
     
-//    public Boolean damage(int amount) {
-//        this.health -= amount;
-//        return this.health <= 0;
-//    }
+    public Boolean damage(int amount) {
+        this.health -= amount;
+        return this.health <= 0;
+    }
 
     @Override
     public String toString() {

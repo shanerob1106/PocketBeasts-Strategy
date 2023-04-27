@@ -8,11 +8,11 @@ package uk.ac.tees.cis2001.pocketbeasts;
  *
  * @author shane
  */
-public class Attack implements AttackInterface{
+public class StandardAttack implements AttackInterface{
     
     protected int health;
     
-    public Attack(){
+    public StandardAttack(){
     
     }
 
@@ -21,5 +21,4 @@ public class Attack implements AttackInterface{
         this.health -= amount;
         return this.health <= 0;
     }
-    
 }

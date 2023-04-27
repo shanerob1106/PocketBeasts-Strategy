@@ -29,6 +29,10 @@ public class Card implements Comparable<Card> {
     private final int attack;
     private int health;
         
+    WeakAttack weakAttack = new WeakAttack();
+    StandardAttack standardAttack = new StandardAttack();
+    StrongAttack strongAttack = new StrongAttack();
+    
     public Card(String id, String name, int manaCost, int attack, int health) {
         this.id = id;
         this.name = name;
