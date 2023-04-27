@@ -36,13 +36,13 @@ public class Player {
     private final InPlay inPlay;
     private final Graveyard graveyard;
     
-    StandardAttack attack = new StandardAttack();
+    // StandardAttack attack = new StandardAttack();
 
     public Player(String name, Deck deck) {
         this.name = name;
         this.manaAvailable = 0;
         this.manaTicker = 0;
-        attack.health = 15;
+        this.health = 15;
         this.deck = deck;
         this.hand = new Hand();
         this.inPlay = new InPlay();
@@ -58,7 +58,7 @@ public class Player {
     }
 
     public int getHealth() {
-        return attack.health;
+        return this.health;
     }
     
     public Deck getDeck() {
@@ -107,7 +107,7 @@ public class Player {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(String.format("%-9s HEALTH/%-5d MANA/%d\n", this.name, attack.health, this.manaAvailable));
+        sb.append(String.format("%-9s HEALTH/%-5d MANA/%d\n", this.name, this.health, this.manaAvailable));
 
         for (int i=0; i<this.inPlay.count()+2; i++) {
             sb.append("+-------+ ");

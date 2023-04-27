@@ -63,7 +63,6 @@ public class Main {
         return getPrompt(prompt, validResponse);
     }
     
-    
     /**
      * @param args the command line arguments
      */
@@ -159,7 +158,7 @@ public class Main {
                         }
                         String target = getPrompt("Choose a number: ", prompts.toArray(new String[0]));
                         if (target.equals("1")) { // Player
-                            if (otherPlayer.attack.damage(card.getAttack())) {
+                            if (otherPlayer.damage(card.getAttack())) {
                                 // if true returned players health <= 0
                                 winningMessage = player.getName() + " wins!";
                                 run = false;
