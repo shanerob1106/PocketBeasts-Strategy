@@ -26,10 +26,10 @@ import java.util.Collections;
  */
 public class Hand extends AbstractDeck {
     
-    private final ArrayList<Card> cards;
+    // private final ArrayList<Card> cards;
 
     public Hand() {
-        this.cards = new ArrayList<>();
+        super(); // this.cards = new ArrayList<>();
     }
 
 //    public ArrayList<Card> getCards() {

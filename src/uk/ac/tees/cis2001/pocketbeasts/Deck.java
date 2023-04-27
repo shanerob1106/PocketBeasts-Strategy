@@ -26,10 +26,10 @@ import java.util.Collections;
  */
 public class Deck extends AbstractDeck {
     
-    private final ArrayList<Card> cards;
+    // private final ArrayList<Card> cards;
     
     public Deck(ArrayList<Card> cards) {
-        this.cards = cards;
+        super(cards); // this.cards = cards;
     }
     
     @Override

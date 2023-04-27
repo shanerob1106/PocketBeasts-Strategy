@@ -12,10 +12,14 @@ import java.util.ArrayList;
  */
 public abstract class AbstractDeck implements DeckInterface {
     
-    private final ArrayList<Card> cards;
+    protected final ArrayList<Card> cards;
 
     public AbstractDeck() {
         this.cards = new ArrayList<>();
+    }
+    
+    public AbstractDeck(ArrayList<Card> cards){
+        this.cards = cards;
     }
         
     @Override

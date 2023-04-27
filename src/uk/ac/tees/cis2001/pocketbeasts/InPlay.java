@@ -25,10 +25,10 @@ import java.util.ArrayList;
  */
 public class InPlay extends AbstractDeck {
     
-    private final ArrayList<Card> cards;
+    // private final ArrayList<Card> cards;
 
     public InPlay() {
-        this.cards = new ArrayList<>();
+        super();
     }
 }
 
