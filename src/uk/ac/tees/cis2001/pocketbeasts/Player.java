@@ -36,7 +36,7 @@ public class Player {
     private final InPlay inPlay;
     private final Graveyard graveyard;
     
-    // StandardAttack attack = new StandardAttack();
+    private AttackInterface attackStrategy;
 
     public Player(String name, Deck deck) {
         this.name = name;
@@ -49,6 +49,10 @@ public class Player {
         this.graveyard = new Graveyard();
     }
 
+    public void setAttackStrategy(AttackInterface attackStrategy){ 
+        this.attackStrategy = attackStrategy;
+    }
+    
     public String getName() {
         return this.name;
     }
@@ -92,17 +96,30 @@ public class Player {
     }
     
     public void useMana(int amount) {
-        this.manaAvailable -= amount;
+        // this.manaAvailable -= amount;
+        if (this.manaAvailable >= amount) {
+            this.manaAvailable -= amount;
+        }
     }
     
     public void drawCard() {
         this.hand.add(this.deck.draw());
     }
     
-    public Boolean damage(int amount) {
-        this.health -= amount;
-        return this.health <= 0;
+    
+    public boolean damage(int amount) {
+        boolean successfulAttack = this.attackStrategy.damage(amount);
+        if (successfulAttack) {
+            this.health -= amount;
+            return true;
+        }
+        return false;
     }
+    
+//    public Boolean damage(int amount) {
+//        this.health -= amount;
+//        return this.health <= 0;
+//    }
 
     @Override
     public String toString() {

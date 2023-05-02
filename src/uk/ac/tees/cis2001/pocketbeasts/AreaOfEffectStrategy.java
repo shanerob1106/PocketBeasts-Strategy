@@ -8,17 +8,14 @@ package uk.ac.tees.cis2001.pocketbeasts;
  *
  * @author shane
  */
-public class WeakAttack implements AttackInterface{
+public class AreaOfEffectStrategy implements AttackInterface{
 
-    protected int health;
-    
-    public WeakAttack(){
-        
-    }
-    
     @Override
-    public boolean damage(int amount) {
-        this.health -= amount;
-        return this.health <= 0;
+    public void performAttack(int availableMana) {
+        if(availableMana >= 3) {
+            // Perform an area of effect attack 
+        } else {
+            // Not enough mana for this attack
+        }
     }
 }

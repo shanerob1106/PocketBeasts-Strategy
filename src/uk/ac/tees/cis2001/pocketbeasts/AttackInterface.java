@@ -9,5 +9,5 @@ package uk.ac.tees.cis2001.pocketbeasts;
  * @author shane
  */
 public interface AttackInterface {
-    public boolean damage(int amount);
+    public void performAttack(int availableMana);
 }

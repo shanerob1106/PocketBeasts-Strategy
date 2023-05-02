@@ -28,10 +28,8 @@ public class Card implements Comparable<Card> {
     private final int manaCost;
     private final int attack;
     private int health;
-        
-    WeakAttack weakAttack = new WeakAttack();
-    StandardAttack standardAttack = new StandardAttack();
-    StrongAttack strongAttack = new StrongAttack();
+    
+    private AttackInterface attackInterface;
     
     public Card(String id, String name, int manaCost, int attack, int health) {
         this.id = id;
@@ -71,6 +69,18 @@ public class Card implements Comparable<Card> {
     
     public void damage(int amount) {
         this.health -= amount;
+    }
+    
+    public void setAttackStrategy(AttackInterface attackInterface){
+        this.attackInterface = attackInterface;
+    }
+    
+    public void performAttack(int manaCost){
+        if(attackInterface != null){ 
+            attackInterface.performAttack(manaCost);
+        } else {
+            // No attack strategy set
+        }
     }
 
     @Override

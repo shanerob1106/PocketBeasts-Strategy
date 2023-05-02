@@ -8,17 +8,14 @@ package uk.ac.tees.cis2001.pocketbeasts;
  *
  * @author shane
  */
-public class StandardAttack implements AttackInterface{
-    
-    protected int health;
-    
-    public StandardAttack(){
-    
-    }
+public class DirectAttackStrategy implements AttackInterface{
 
     @Override
-    public boolean damage(int amount) {
-        this.health -= amount;
-        return this.health <= 0;
+    public void performAttack(int availableMana) {
+        if(availableMana >= 2) {
+            // Perform a direct damage attack
+        } else { 
+            // Not enough mana for this attack
+        }
     }
 }
