@@ -8,14 +8,20 @@ package uk.ac.tees.cis2001.pocketbeasts;
  *
  * @author shane
  */
-public class AreaOfEffectStrategy implements AttackInterface{
+public class HeavyAttack implements AttackInterface{
 
+    private int attack;
+    
     @Override
-    public void performAttack(int availableMana) {
+    public int performAttack(int availableMana) {
         if(availableMana >= 3) {
-            // Perform an area of effect attack 
+            this.attack = 3;
+            System.out.println("You attack with " + this.attack);
         } else {
             // Not enough mana for this attack
+            System.out.println("Not enough mana to attack ");
+            this.attack = 0;
         }
+        return this.attack;
     }
 }

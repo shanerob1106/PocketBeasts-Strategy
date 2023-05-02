@@ -96,10 +96,7 @@ public class Player {
     }
     
     public void useMana(int amount) {
-        // this.manaAvailable -= amount;
-        if (this.manaAvailable >= amount) {
-            this.manaAvailable -= amount;
-        }
+        this.manaAvailable -= amount;
     }
     
     public void drawCard() {
@@ -108,14 +105,11 @@ public class Player {
     
     
     public boolean damage(int amount) {
-        boolean successfulAttack = this.attackStrategy.damage(amount);
-        if (successfulAttack) {
-            this.health -= amount;
-            return true;
-        }
-        return false;
+        this.health -= amount;
+        return this.health <=0 ;
     }
     
+// Original Code //    
 //    public Boolean damage(int amount) {
 //        this.health -= amount;
 //        return this.health <= 0;
