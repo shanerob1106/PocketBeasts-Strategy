@@ -28,10 +28,10 @@ public class Card implements Comparable<Card> {
     private final int manaCost;
     private int attack;
     private int health;
-    
+
     QuickAttack quickAttack = new QuickAttack();
     HeavyAttack heavyAttack = new HeavyAttack();
-        
+
     public Card(String id, String name, int manaCost, int attack, int health) {
         this.id = id;
         this.name = name;
@@ -39,7 +39,7 @@ public class Card implements Comparable<Card> {
         this.attack = attack;
         this.health = health;
     }
-    
+
     public Card(Card card) {
         this.id = card.id;
         this.name = card.name;
@@ -51,7 +51,7 @@ public class Card implements Comparable<Card> {
     public String getId() {
         return this.id;
     }
-    
+
     public String getName() {
         return this.name;
     }
@@ -59,20 +59,23 @@ public class Card implements Comparable<Card> {
     public int getManaCost() {
         return this.manaCost;
     }
-    
+
     public int getAttack() {
-        if(getManaCost() >= 3){
-            return attack = heavyAttack.performAttack(getManaCost());
+        int choice = 0;
+        if (getManaCost() >= 3) {
+            if (choice == 1) {
+                return attack = heavyAttack.performAttack(getManaCost());
+            } else {
+                return attack = quickAttack.performAttack(getManaCost());
+            }
         }
-        else {
-            return attack = quickAttack.performAttack(getManaCost());
-        }
+        return this.attack;
     }
 
     public int getHealth() {
         return this.health;
     }
-    
+
     public void damage(int amount) {
         this.health -= amount;
     }
