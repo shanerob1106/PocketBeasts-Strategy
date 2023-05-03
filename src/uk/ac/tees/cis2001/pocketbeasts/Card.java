@@ -61,15 +61,11 @@ public class Card implements Comparable<Card> {
     }
 
     public int getAttack() {
-        int choice = 0;
         if (getManaCost() >= 3) {
-            if (choice == 1) {
-                return attack = heavyAttack.performAttack(getManaCost());
-            } else {
-                return attack = quickAttack.performAttack(getManaCost());
-            }
+            return attack = heavyAttack.performAttack(getManaCost());
+        } else {
+            return attack = quickAttack.performAttack(getManaCost());
         }
-        return this.attack;
     }
 
     public int getHealth() {
@@ -82,8 +78,8 @@ public class Card implements Comparable<Card> {
 
     @Override
     public String toString() {
-        return this.name + " (" + this.id + ") Mana Cost/" + this.manaCost + 
-                " Attack/" + this.attack + " Health/" + this.health;
+        return this.name + " (" + this.id + ") Mana Cost/" + this.manaCost
+                + " Attack/" + this.attack + " Health/" + this.health;
     }
 
     @Override
