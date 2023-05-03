@@ -26,9 +26,10 @@ public class Card implements Comparable<Card> {
     private final String id;
     private final String name;
     private final int manaCost;
-    private int attack;
+    private int attack; // private final int attack;
     private int health;
-
+    
+    // My 'additions'
     QuickAttack quickAttack = new QuickAttack();
     HeavyAttack heavyAttack = new HeavyAttack();
 
@@ -62,11 +63,11 @@ public class Card implements Comparable<Card> {
 
     public int getAttack() {
         if (getManaCost() >= 3) {
-            return attack = heavyAttack.performAttack(getManaCost());
-        } else {
-            return attack = quickAttack.performAttack(getManaCost());
+                return attack = heavyAttack.performAttack(getManaCost());
+            } else {
+                return attack = quickAttack.performAttack(getManaCost());
+            }
         }
-    }
 
     public int getHealth() {
         return this.health;
