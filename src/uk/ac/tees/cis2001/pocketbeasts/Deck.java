@@ -29,7 +29,8 @@ public class Deck extends AbstractDeck {
     // private final ArrayList<Card> cards;
     
     public Deck(ArrayList<Card> cards) {
-        super(cards); // this.cards = cards;
+        super(cards); 
+        // this.cards = cards;
     }
     
     @Override
