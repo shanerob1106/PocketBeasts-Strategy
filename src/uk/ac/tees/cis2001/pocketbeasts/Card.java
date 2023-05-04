@@ -29,7 +29,7 @@ public class Card implements Comparable<Card> {
     private int attack; // private final int attack;
     private int health;
     
-    // My 'additions'
+    // My additions
     QuickAttack quickAttack = new QuickAttack();
     HeavyAttack heavyAttack = new HeavyAttack();
 
