@@ -108,12 +108,6 @@ public class Player {
         this.health -= amount;
         return this.health <=0 ;
     }
-    
-// Original Code //    
-//    public Boolean damage(int amount) {
-//        this.health -= amount;
-//        return this.health <= 0;
-//    }
 
     @Override
     public String toString() {
